@@ -1,9 +1,11 @@
-public class Idol {
-    public String name;
-        private int age;
+public class Idol extends Group {
+    private String name;
+    private int age;
     private int height;
     private int debutYear;
     private static int numIdol;
+    private boolean cancelled;
+    private boolean isActive;
 
     public Idol(){
         name  = "null";
@@ -14,7 +16,7 @@ public class Idol {
     }
 
     public Idol(String na, int ag){
-      //  this(na,ag, 0, 0 );
+      this(na,ag, 0, 0 );
         numIdol++;
     }
 
@@ -44,6 +46,15 @@ public class Idol {
         return debutYear;
     }
 
+    public boolean getCancelled(){
+        return cancelled;
+    }
+
+    public boolean getIsActive(){
+        return isActive;
+    }
+    
+
 //mutator methods
     public void setName(String n){
         name = n;
@@ -60,6 +71,4 @@ public class Idol {
     public String toString(){
         return "name: " + name + "|| age: " + age + "|| height: " + height + "|| debut year: " + debutYear; 
     }
-
-    
 }
