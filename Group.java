@@ -1,5 +1,5 @@
-public class Group extends Company {
-      private String name;
+public class Group extends Company{
+    private String name;
     private int numMembers;
     private int numSongs;
     private boolean isActive;
@@ -62,6 +62,7 @@ public class Group extends Company {
         members = m;
     }
 
+
     public void getMemberStats(String na) {
         for (int i = 0; i < members.length; i++) {
             if (members[i].getName().equals(na)) {
@@ -74,8 +75,16 @@ public class Group extends Company {
 
     public void publishAlbum(String albumName, int numSongs) {
         int sales = (int) (Math.random() * 1000000);
-        System.out.println("Album: " + albumName + " has been released with " + numSongs + " songs and has sold "
-                + sales + " copies.");
+
     }
-  
+
+    public void performConcert(String concertName, String concertLocation) {
+        int ticketsSold = (int) (Math.random() *(10000-70000 - 1));
+        System.out.println("Concert: " + concertName + " has been performed with " + ticketsSold + " tickets sold at" + concertLocation);
+        int randomIdol =  (int) (Math.random() * members.length);
+        members[randomIdol].randomCancel();
+    }
+
+
+
 }
