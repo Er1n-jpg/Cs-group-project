@@ -4,6 +4,7 @@ public class Group extends Company{
     private int numSongs;
     private boolean isActive;
     private Idol[] members; // TRUST ME ON THIS -> array to store group members
+    
 
     // Accessor methods
     public Group() {
@@ -85,6 +86,11 @@ public class Group extends Company{
         members[randomIdol].randomCancel();
     }
 
+    public void newDay(){
+
+    }
+
 
 
 }
+
