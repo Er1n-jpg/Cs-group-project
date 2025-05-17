@@ -2,6 +2,8 @@ public class Group extends Company{
     private String name;
     private int numMembers;
     private int numSongs;
+    private int hateMetre;
+    private int numAlbums;
     private boolean isActive;
     private Idol[] members; // TRUST ME ON THIS -> array to store group members
     
@@ -34,6 +36,14 @@ public class Group extends Company{
         return numSongs;
     }
 
+    public int getHateMetre() {
+        return hateMetre;
+    }
+
+    public int getNumAlbums() {
+        return numAlbums;
+    }
+
     public boolean getIsActive() {
         return isActive;
     }
@@ -53,6 +63,14 @@ public class Group extends Company{
 
     public void setNumSongs(int ns) {
         numSongs = ns;
+    }
+
+    public void setHateMetre(int hm) {
+        hateMetre = hm;
+    }
+
+    public void setNumAlbums(int na) {
+        numAlbums = na;
     }
 
     public void setIsActive(boolean ia) {
@@ -75,22 +93,29 @@ public class Group extends Company{
     }
 
     public void publishAlbum(String albumName, int numSongs) {
-        int sales = (int) (Math.random() * 1000000);
+        int copiesSold = (int) (Math.random() * 1000000);
+        int sales = copiesSold * 35;
+
 
     }
 
     public void performConcert(String concertName, String concertLocation) {
-        int ticketsSold = (int) (Math.random() *(10000-70000 - 1));
+        int ticketsSold = (int) (Math.random() *(1000-70000 - 1));
         System.out.println("Concert: " + concertName + " has been performed with " + ticketsSold + " tickets sold at" + concertLocation);
         int randomIdol =  (int) (Math.random() * members.length);
         members[randomIdol].randomCancel();
+        int moneyMade = (int) (Math.random() * 2000000- -1000000);
+        System.out.println(members[randomIdol].getName() + " has been cancelled");
+        System.out.println(name + " has performed a concert at " + concertLocation + " with " + ticketsSold + " tickets sold and made " + moneyMade + " dollars");
     }
 
-    public void newDay(){
-
+    public String toString(){
+        return "Group name: " + name + "|| Number of Members: " + numMembers + "|| Number of songs: " + numSongs + "|| Number of albums: " + numAlbums + "|| Hate Metre: " + hateMetre + "|| Is Active: " + isActive; 
     }
+    
 
 
 
 }
+
 
