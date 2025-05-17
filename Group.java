@@ -104,7 +104,7 @@ public class Group extends Company{
         System.out.println("Concert: " + concertName + " has been performed with " + ticketsSold + " tickets sold at" + concertLocation);
         int randomIdol =  (int) (Math.random() * members.length);
         members[randomIdol].randomCancel();
-        int moneyMade = (int) (Math.random() * 2000000- -1000000);
+        int moneyMade = (int) (Math.random() * 2000000- -100000);
         System.out.println(members[randomIdol].getName() + " has been cancelled");
         System.out.println(name + " has performed a concert at " + concertLocation + " with " + ticketsSold + " tickets sold and made " + moneyMade + " dollars");
     }
