@@ -1,9 +1,11 @@
-public class Group extends Company{
+public class Group extends Company implements fan{
     private String name;
     private int numMembers;
     private int numSongs;
     private int hateMetre;
     private int numAlbums;
+    private String fandomName;
+    private int numFans;
     private boolean isActive;
     private Idol[] members; // TRUST ME ON THIS -> array to store group members
     
@@ -48,6 +50,14 @@ public class Group extends Company{
         return isActive;
     }
 
+    public String getFandomName() {
+        return fandomName;
+    }
+
+    private int getNumFans(){
+        return numFans;
+    }
+
     public Idol[] getMembers() {
         return members;
     }
@@ -77,6 +87,17 @@ public class Group extends Company{
         isActive = ia;
     }
 
+    public void setFandomName(String fn) {
+        fandomName = fn;
+        
+    }
+
+    public void setNumFans(int nf) {
+        if(nf>0){
+         numFans = nf;
+        }
+    }
+
     public void setMembers(Idol[] m) {
         members = m;
     }
@@ -104,18 +125,30 @@ public class Group extends Company{
         System.out.println("Concert: " + concertName + " has been performed with " + ticketsSold + " tickets sold at" + concertLocation);
         int randomIdol =  (int) (Math.random() * members.length);
         members[randomIdol].randomCancel();
-        int moneyMade = (int) (Math.random() * 2000000- -100000);
+        int moneyMade = (int) (Math.random() * 2000000- -1000000);
         System.out.println(members[randomIdol].getName() + " has been cancelled");
         System.out.println(name + " has performed a concert at " + concertLocation + " with " + ticketsSold + " tickets sold and made " + moneyMade + " dollars");
     }
 
     public String toString(){
-        return "Group name: " + name + "|| Number of Members: " + numMembers + "|| Number of songs: " + numSongs + "|| Number of albums: " + numAlbums + "|| Hate Metre: " + hateMetre + "|| Is Active: " + isActive; 
+        return "Group name: " + name + "|| Number of Members: " + numMembers + "|| Fandom Name: " + fandomName + "|| Number of songs: " + numSongs + "|| Number of albums: " + numAlbums + "|| Hate Metre: " + hateMetre + "|| Is Active: " + isActive; 
     }
+
+    public void newDay(){
+        hateMetre = hateMetre + (int) (Math.random() * 20 -10);
+        if(hateMetre > 100){
+            isActive = false;
+        }
+
+        
+    }
+
+}
     
 
 
 
-}
+
+
 
 
