@@ -6,6 +6,8 @@ public class Idol extends Group {
     private static int numIdol;
     private boolean cancelled;
     private boolean isActive;
+    private String position;
+    private int experienceMeter;
 
     public Idol(){
         name  = "null";
@@ -53,7 +55,14 @@ public class Idol extends Group {
     public boolean getIsActive(){
         return isActive;
     }
-    
+
+    public String getPosition(){
+        return position;
+    }
+
+    public int getExperienceMeter(){
+        return experienceMeter;
+    }
 
 //mutator methods
     public void setName(String n){
@@ -68,7 +77,45 @@ public class Idol extends Group {
         height = h;
     }
 
-    public String toString(){
-        return "name: " + name + "|| age: " + age + "|| height: " + height + "|| debut year: " + debutYear; 
+    public void setDebutYear(int dy){
+        debutYear = dy;
     }
+
+    public void setCancelled(boolean c){
+        cancelled = c;
+    }
+
+    public void setIsActive(boolean ia){
+        isActive = ia;
+    }
+
+    public void setPosition(String p){
+        position = p;
+    }
+
+    public void setExperienceMeter(int em){
+        experienceMeter = em;
+    }
+
+    
+    public void practice(){
+        experienceMeter += 1;
+    }
+
+
+    public void randomCancel(){
+        int random = (int) (Math.random() * 8);
+        if (random == 5){
+            cancelled = true;
+        }
+    }
+
+
+    public String toString(){
+        return "name: " + name + "|| age: " + age + "|| height: " + height + "|| debut year: " + debutYear + "|| Position: " + position; 
+    }
+
+    
+
+
 }
