@@ -1,3 +1,7 @@
-public class Fan {
+public interface fan {
+    public String fandomName();
+    public int numFans();
+
     
 }
+
